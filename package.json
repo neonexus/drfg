@@ -1,0 +1,62 @@
+{
+    "name": "drfg",
+    "version": "0.0.1",
+    "description": "Download Release From GitHub, extract it into a new directory, and install dependencies, with a single command.",
+    "bin": {
+        "drfg": "src/bin.js",
+        "dl-rl-from-gh": "src/bin.js",
+        "download-rl-from-gh": "src/bin.js",
+        "download-rl-from-github": "src/bin.js",
+        "download-release-from-gh": "src/bin.js",
+        "download-release-from-github": "src/bin.js"
+    },
+    "main": "src/lib.js",
+    "scripts": {
+        "lint": "./node_modules/eslint/bin/eslint.js . --max-warnings=0 --report-unused-disable-directives && echo '✔  Your .js files look good.'",
+        "test": "npm run lint && mocha -R spec --ui bdd --timeout 5000 \"test/**/*.test.js\" && echo '✔ Done ✔\n'"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/neonexus/drfg.git"
+    },
+    "files": [
+        "src/bin.js",
+        "src/lib.js",
+        "src/utilities.js"
+    ],
+    "keywords": [
+        "download",
+        "release",
+        "tar",
+        "tarball",
+        "zipball",
+        "zip",
+        "github",
+        "extract",
+        "extraction",
+        "cloning",
+        "clone",
+        "install"
+    ],
+    "author": "NeoNexus DeMortis <neonexus.demortis@gmail.com>",
+    "license": "GPL-3.0-only",
+    "bugs": {
+        "url": "https://github.com/neonexus/drfg/issues"
+    },
+    "homepage": "https://github.com/neonexus/drfg#readme",
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/neonexus"
+        }
+    ],
+    "dependencies": {
+        "extract-zip": "^2.0.1"
+    },
+    "devDependencies": {
+        "chai": "4.3.10",
+        "chai-spies": "1.0.0",
+        "eslint": "8.52.0",
+        "mocha": "10.2.0"
+    }
+}
