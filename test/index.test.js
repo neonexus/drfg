@@ -6,7 +6,7 @@ const utils = require('../src/utilities');
 
 chai.use(require('chai-spies'));
 
-describe('drfg - Download Zipball From Github', () => {
+describe('drfg - Download Release From Github', () => {
     afterEach((done) => {
         chai.spy.restore();
         done();
@@ -77,7 +77,7 @@ describe('drfg - Download Zipball From Github', () => {
         });
 
         it('should calculate the size of a directory recursively', (done) => {
-            const githubSize = fs.statSync(path.join(__dirname, '../.github/FUNDING.yml')).size + fs.statSync(path.join(__dirname, '../.github/workflows/codeql.yml')).size;
+            const githubSize = fs.statSync(path.join(__dirname, '../.github/FUNDING.yml')).size + fs.statSync(path.join(__dirname, '../.github/workflows/codeql-analysis.yml')).size;
 
             const utilsCalc = utils.getDirectorySize(path.join(__dirname, '../.github'));
 

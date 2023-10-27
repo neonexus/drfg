@@ -4,7 +4,7 @@
 [![Build Status](https://img.shields.io/travis/com/neonexus/drfg/release?style=plastic&logo=travis)](https://app.travis-ci.com/neonexus/drfg)
 [![NPM version](https://img.shields.io/npm/v/drfg/latest?style=plastic&logo=npm&color=blue)](https://www.npmjs.com/package/drfg)
 [![GitHub version](https://img.shields.io/github/v/release/neonexus/drfg?style=plastic&logo=github&label=GitHub@latest)](https://github.com/neonexus/drfg)
-[<img src="license.svg" width="95" height="18">](LICENSE)
+[<img src="gpl.svg" width="119" height="18">](LICENSE)
 
 The idea of this package, is to make downloading / extracting / installing a GitHub repo's latest release a breeze (without creating a new repo, or using Git for that matter). Both in the terminal, and programmatically, if you are into that kind of thing...
 
