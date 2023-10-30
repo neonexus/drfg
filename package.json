@@ -1,6 +1,6 @@
 {
     "name": "drfg",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Download Release From GitHub, extract it into a new directory, and install dependencies, with a single command.",
     "bin": {
         "drfg": "src/bin.js",
