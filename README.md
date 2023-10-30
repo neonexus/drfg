@@ -40,7 +40,7 @@ OR
 
 `npx drfg <github-repo> <new-folder-name>`
 
-For example, if you wanted to "clone" (download the zipball, and extract it) the repo [sails-react-bootstrap-webpack](https://github.com/neonexus/sails-react-bootstrap-webpack), just do something like:
+For example, if you wanted to "clone" (download/extract/install) the repo [sails-react-bootstrap-webpack](https://github.com/neonexus/sails-react-bootstrap-webpack), just do something like:
 
 ```shell
 npx drfg neonexus/sails-react-bootstrap-webpack
@@ -94,11 +94,11 @@ This does **not** prevent you from using the version you already have installed,
 Once installed globally, you can use `drfg` directly, with one of its few different binary names:
 
 * `drfg`
-* `dl-zip-from-gh`
-* `download-zip-from-gh`
-* `download-zip-from-github`
-* `download-zipball-from-gh`
-* `download-zipball-from-github`
+* `dl-rl-from-gh`
+* `download-rl-from-gh`
+* `download-rl-from-github`
+* `download-release-from-gh`
+* `download-release-from-github`
 
 ## Programmatic Usage
 

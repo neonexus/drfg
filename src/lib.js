@@ -18,7 +18,7 @@ const reqOptions = {
 
 // Private functions
 const lib = {
-    downloadZipball: (zipballUrl) => new Promise((resolve, reject) => {
+    downloadRelease: (zipballUrl) => new Promise((resolve, reject) => {
         if (!zipballUrl || zipballUrl === '') {
             return reject('Zipball URL is required.');
         }
@@ -53,7 +53,7 @@ const lib = {
         downloadIt(zipballUrl);
     }),
 
-    extractZipball: (destinationFolder) => new Promise((resolve, reject) => {
+    extractRelease: (destinationFolder) => new Promise((resolve, reject) => {
         let dirToBeMoved;
         let extractedSize = 0;
 
@@ -159,18 +159,18 @@ const drfg = {
             return reject('Repository must be in the format "username/repo".');
         }
 
-        if (fs.existsSync(destinationFolder)) {
-            return reject('The folder "' + destinationFolder + '" already exists.');
+        if (fs.existsSync(destinationFolder) && getDirectorySize(destinationFolder)) {
+            return reject('The folder "' + destinationFolder + '" already exists, and is not empty.');
         }
 
         const downloadStartTime = process.hrtime();
 
         drfg.getVersionInfo(repo, version).then((release) => {
-            lib.downloadZipball(release.zipball).then((zipballSize) => {
+            lib.downloadRelease(release.zipball).then((zipballSize) => {
                 const downloadTimeElapsed = process.hrtime(downloadStartTime);
                 const extractionStartTime = process.hrtime();
 
-                lib.extractZipball(destinationFolder).then(async (extractedSize) => {
+                lib.extractRelease(destinationFolder).then(async (extractedSize) => {
                     const extractionTimeElapsed = process.hrtime(extractionStartTime);
 
                     const installationStartTime = process.hrtime();
@@ -247,7 +247,7 @@ const drfg = {
             res.on('end', () => {
                 const release = JSON.parse(data);
 
-                if (release.message === 'Not Found' || !release.tag_name || release.tag_name === '' || !release.zipball_url || release.zipball_url === '') {
+                if (res.statusCode !== 200 || release.message === 'Not Found' || !release.tag_name || release.tag_name === '' || !release.zipball_url || release.zipball_url === '') {
                     return reject(
                         '\nVersion "' + version.replace('tags/', '') + '" of the repo "' + repo + '" does not seem to exist. Make sure the repo is using GitHub Releases.' +
                         '\n\nRequest made to: ' + reqUrl + '\n'
