@@ -1,6 +1,6 @@
 {
     "name": "drfg",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Download Release From GitHub, extract it into a new directory, and install dependencies, with a single command.",
     "bin": {
         "drfg": "src/bin.js",
@@ -55,8 +55,8 @@
     },
     "devDependencies": {
         "chai": "4.3.10",
-        "chai-spies": "1.0.0",
-        "eslint": "8.52.0",
+        "chai-spies": "1.1.0",
+        "eslint": "8.53.0",
         "mocha": "10.2.0"
     }
 }

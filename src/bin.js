@@ -98,6 +98,8 @@ function getOnWithIt() {
             , true // isSmall
         );
         blankLine();
+
+        process.exit(0); // force a clean exit
     }).catch((e) => {
         console.error(e);
     });
